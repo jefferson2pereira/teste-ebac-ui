@@ -17,17 +17,25 @@ describe('Funcionalidade Página de Produtos', () => {
     it('Deve adcionar um produto ao carrinho', () => {
        var quantidade = 3
         cy.get('.product-block')
-            .contains('Atlas Fitness Tank')
+            .contains('Abominable Hoodie')
             .click()
         cy.get('.button-variable-item-M').click()
-        cy.get(':nth-child(2) > .value > .variable-items-wrapper > .variable-item')
-            .click()
+        cy.get('.button-variable-item-Green').click()
         cy.get('.input-text')
             .click().clear().type(quantidade)
         cy.get('.single_add_to_cart_button')
-            .click()
-
+      .click()
+            //testes
             cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
-            cy.get('.woocommerce-message').should('contain', quantidade +' × “Atlas Fitness Tank” foram adicionados no seu carrinho.')
+            cy.get('.woocommerce-message').should('contain', quantidade +' × “Abominable Hoodie” foram adicionados no seu carrinho.')
     });
+it('deve adicionar um produto cao carrinho - Usando comandos customizados', () => {
+    cy.addProdutos('Abominable Hoodie','M','Green', 3)
+
+});
+it.only('deve adicionar um produto cao carrinho - Usando comandos customizados', () => {
+    cy.addProdutos('Beaumont Summit Kit','L','Orange', 2)
+
+});
+
 });
