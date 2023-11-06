@@ -40,7 +40,7 @@ Cypress.Commands.add('preCadastro', (email, senha, nome, sobrenome) => {
    cy.get('#account_last_name').type(sobrenome)
    cy.get('.woocommerce-Button').click()
 
-
+   
 })
 
 Cypress.Commands.add('addProdutos', (produto, tamanho, cor, quantidade) => {

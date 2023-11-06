@@ -11,7 +11,7 @@ describe('Funcionalidade Página de Produtos', () => {
             //.first()
             //.last()
             //.eq(3)
-            .contains('Apollo Running Short')
+            .contains('Abominable Hoodie')
             .click()
     });
     it('Deve adcionar um produto ao carrinho', () => {
@@ -33,7 +33,7 @@ it('deve adicionar um produto cao carrinho - Usando comandos customizados', () =
     cy.addProdutos('Abominable Hoodie','M','Green', 3)
 
 });
-it.only('deve adicionar um produto cao carrinho - Usando comandos customizados', () => {
+it('deve adicionar um produto cao carrinho - Usando comandos customizados', () => {
     cy.addProdutos('Beaumont Summit Kit','L','Orange', 2)
 
 });
